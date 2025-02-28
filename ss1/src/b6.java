@@ -1,3 +1,5 @@
+package src;
+
 public class b6 {
     public static void main(String[] args) {
 //  ### 1. **Vai trò của JDK, JRE và JVM trong hệ sinh thái Java**
