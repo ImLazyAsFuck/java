@@ -44,6 +44,7 @@
     "Application.b5.executor": "Run",
     "Application.b7.executor": "Run",
     "Application.b8.executor": "Run",
+    "Application.b9.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -83,6 +84,7 @@
       <workItem from="1740921407748" duration="3657000" />
       <workItem from="1740931153282" duration="56000" />
       <workItem from="1740935041515" duration="1530000" />
+      <workItem from="1740978324982" duration="335000" />
     </task>
     <servers />
   </component>

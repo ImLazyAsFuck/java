@@ -7,22 +7,22 @@ public class b9 {
         System.out.print("Nhập tên học sinh: ");
         String tenHocSinh = scanner.nextLine();
 
-        double[] diem = new double[3];
+        System.out.print("Nhập điểm môn 1: ");
+        double diem1 = scanner.nextDouble();
+        System.out.print("Nhập điểm môn 2: ");
+        double diem2 = scanner.nextDouble();
+        System.out.print("Nhập điểm môn 3: ");
+        double diem3 = scanner.nextDouble();
 
-        for (int i = 0; i < 3; i++) {
-            System.out.print("Nhập điểm môn " + (i + 1) + ": ");
-            diem[i] = scanner.nextDouble();
-        }
-
-        double diemTrungBinh = (diem[0] + diem[1] + diem[2]) / 3;
+        double diemTrungBinh = (diem1 + diem2 + diem3) / 3;
 
         String xepLoai = diemTrungBinh >= 5 ? "Lên lớp" : "Học lại";
 
         System.out.println("\n--- Kết quả ---");
         System.out.println("Tên học sinh: " + tenHocSinh);
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Điểm môn " + (i + 1) + ": " + diem[i]);
-        }
+        System.out.println("Điểm môn 1: " + diem1);
+        System.out.println("Điểm môn 2: " + diem2);
+        System.out.println("Điểm môn 3: " + diem3);
         System.out.println("Điểm trung bình: " + String.format("%.2f", diemTrungBinh));
         System.out.println("Kết quả: " + xepLoai);
 
