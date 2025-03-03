@@ -1,33 +1,31 @@
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class b9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Nhập ngày tháng năm ban đầu:");
-        System.out.print("Nhập năm: ");
-        int year = scanner.nextInt();
-        System.out.print("Nhập tháng: ");
-        int month = scanner.nextInt();
-        System.out.print("Nhập ngày: ");
-        int day = scanner.nextInt();
+        System.out.print("Nhập tên học sinh: ");
+        String tenHocSinh = scanner.nextLine();
 
-        LocalDate date = LocalDate.of(year, month, day);
+        double[] diem = new double[3];
 
-        LocalDate nextDay = date.plusDays(1);
-        System.out.println("Ngày tiếp theo: " + nextDay);
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Nhập điểm môn " + (i + 1) + ": ");
+            diem[i] = scanner.nextDouble();
+        }
 
-        System.out.println("\nNhập ngày tháng năm thứ hai để tính số ngày giữa hai ngày:");
-        System.out.print("Nhập năm: ");
-        int year2 = scanner.nextInt();
-        System.out.print("Nhập tháng: ");
-        int month2 = scanner.nextInt();
-        System.out.print("Nhập ngày: ");
-        int day2 = scanner.nextInt();
-        LocalDate date2 = LocalDate.of(year2, month2, day2);
-        long daysBetween = ChronoUnit.DAYS.between(date, date2);
-        System.out.println("Số ngày giữa hai ngày: " + Math.abs(daysBetween));
+        double diemTrungBinh = (diem[0] + diem[1] + diem[2]) / 3;
+
+        String xepLoai = diemTrungBinh >= 5 ? "Lên lớp" : "Học lại";
+
+        System.out.println("\n--- Kết quả ---");
+        System.out.println("Tên học sinh: " + tenHocSinh);
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Điểm môn " + (i + 1) + ": " + diem[i]);
+        }
+        System.out.println("Điểm trung bình: " + String.format("%.2f", diemTrungBinh));
+        System.out.println("Kết quả: " + xepLoai);
+
+        scanner.close();
     }
 }
