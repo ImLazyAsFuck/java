@@ -2,31 +2,30 @@ import java.util.Scanner;
 
 public class b8 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập giờ ban đầu");
-        int startHour = sc.nextInt();
-        System.out.println("Nhập phút ban đầu");
-        int startMinute = sc.nextInt();
-        System.out.println("Nhập giây ban đầu:");
-        int startSecond = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Nhập số giờ cần cộng:");
-        int addHour = sc.nextInt();
-        System.out.println("Nhập số phút cần cộng:");
-        int addMinute = sc.nextInt();
-        System.out.println("Nhập số giây cần cộng:");
-        int addSecond = sc.nextInt();
+        System.out.print("Nhập tên học sinh: ");
+        String tenHocSinh = scanner.nextLine();
 
-        int startTotalSeconds = startHour * 3600 + startMinute * 60 + startSecond;
-        int addTotalSeconds = addHour * 3600 + addMinute * 60 + addSecond;
-        int totalSeconds = startTotalSeconds + addTotalSeconds;
+        System.out.print("Nhập điểm môn 1: ");
+        double diem1 = scanner.nextDouble();
+        System.out.print("Nhập điểm môn 2: ");
+        double diem2 = scanner.nextDouble();
+        System.out.print("Nhập điểm môn 3: ");
+        double diem3 = scanner.nextDouble();
 
-        int finalHour = totalSeconds / 3600;
-        int finalMinute = (totalSeconds % 3600) / 60;
-        int finalSecond = totalSeconds % 60;
+        double diemTrungBinh = (diem1 + diem2 + diem3) / 3;
 
-        System.out.println("Thời gian sau khi cộng:");
-        System.out.printf("%02d:%02d:%02d\n", finalHour, finalMinute, finalSecond);
+        String xepLoai = diemTrungBinh >= 5 ? "Lên lớp" : "Học lại";
 
+        System.out.println("\n--- Kết quả ---");
+        System.out.println("Tên học sinh: " + tenHocSinh);
+        System.out.println("Điểm môn 1: " + diem1);
+        System.out.println("Điểm môn 2: " + diem2);
+        System.out.println("Điểm môn 3: " + diem3);
+        System.out.println("Điểm trung bình: " + String.format("%.2f", diemTrungBinh));
+        System.out.println("Kết quả: " + xepLoai);
+
+        scanner.close();
     }
 }

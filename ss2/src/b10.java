@@ -1,32 +1,23 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class b10 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Nhập hệ số a: ");
-        double a = scanner.nextDouble();
-        System.out.print("Nhập hệ số b: ");
-        double b = scanner.nextDouble();
-        System.out.print("Nhập hệ số c: ");
-        double c = scanner.nextDouble();
-        System.out.print("Nhập hệ số d: ");
-        double d = scanner.nextDouble();
+        System.out.print("Nhập số nguyên lớn thứ nhất: ");
+        BigInteger num1 = new BigInteger(scanner.nextLine());
 
-        double delta = b * b - 4 * c * d;
-        double x1 = (-b + Math.sqrt(delta)) / (2 * c);
-        double x2 = (-b - Math.sqrt(delta)) / (2 * c);
-        double x = -b / (2 * c);
+        System.out.print("Nhập số nguyên lớn thứ hai: ");
+        BigInteger num2 = new BigInteger(scanner.nextLine());
 
-        String result = (a == 0)
-                ? ((delta > 0)
-                ? "Phương trình có hai nghiệm: " + x1 + " và " + x2
-                : (delta == 0)
-                ? "Phương trình có nghiệm kép: " + x
-                : "Phương trình vô nghiệm.")
-                : "Giải phương trình bậc ba bằng phương pháp Cardano hoặc Newton-Raphson không được triển khai trong chương trình này.";
-
-        System.out.println(result);
+        System.out.println("Tổng: " + num1.add(num2));
+        System.out.println("Hiệu: " + num1.subtract(num2));
+        System.out.println("Tích: " + num1.multiply(num2));
+        System.out.println("Thương: " + num1.divide(num2));
+        System.out.println("Phần dư: " + num1.remainder(num2));
+        System.out.println("Lũy thừa bậc 10 của số thứ nhất: " + num1.pow(10));
+        System.out.println("Lũy thừa bậc 10 của số thứ hai: " + num2.pow(10));
 
         scanner.close();
     }

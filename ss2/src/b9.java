@@ -4,27 +4,34 @@ public class b9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Nhập tên học sinh: ");
-        String tenHocSinh = scanner.nextLine();
+        System.out.print("Nhập ngày: ");
+        int day = scanner.nextInt();
+        System.out.print("Nhập tháng: ");
+        int month = scanner.nextInt();
+        System.out.print("Nhập năm: ");
+        int year = scanner.nextInt();
 
-        System.out.print("Nhập điểm môn 1: ");
-        double diem1 = scanner.nextDouble();
-        System.out.print("Nhập điểm môn 2: ");
-        double diem2 = scanner.nextDouble();
-        System.out.print("Nhập điểm môn 3: ");
-        double diem3 = scanner.nextDouble();
+        int leapYear = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 1 : 0;
+        int daysInMonth = 28 + ((month + (month / 8)) % 2) + 2 % month + (1 / month) * (leapYear * (month / 2 + 2 % month));
 
-        double diemTrungBinh = (diem1 + diem2 + diem3) / 3;
+        day = (day % daysInMonth) + 1;
+        month = month + (day == 1 ? 1 : 0);
+        year = year + (month == 13 ? 1 : 0);
+        month = (month % 13) + (month / 13);
 
-        String xepLoai = diemTrungBinh >= 5 ? "Lên lớp" : "Học lại";
+        System.out.println("Ngày tiếp theo: " + day + "/" + month + "/" + year);
 
-        System.out.println("\n--- Kết quả ---");
-        System.out.println("Tên học sinh: " + tenHocSinh);
-        System.out.println("Điểm môn 1: " + diem1);
-        System.out.println("Điểm môn 2: " + diem2);
-        System.out.println("Điểm môn 3: " + diem3);
-        System.out.println("Điểm trung bình: " + String.format("%.2f", diemTrungBinh));
-        System.out.println("Kết quả: " + xepLoai);
+        System.out.print("Nhập ngày thứ hai: ");
+        int day2 = scanner.nextInt();
+        System.out.print("Nhập tháng thứ hai: ");
+        int month2 = scanner.nextInt();
+        System.out.print("Nhập năm thứ hai: ");
+        int year2 = scanner.nextInt();
+
+        int days1 = year * 365 + day + (month * 30) + ((month / 2) * (month % 2)) + (month > 2 ? leapYear : 0);
+        int days2 = year2 * 365 + day2 + (month2 * 30) + ((month2 / 2) * (month2 % 2)) + (month2 > 2 ? ((year2 % 4 == 0 && (year2 % 100 != 0 || year2 % 400 == 0)) ? 1 : 0) : 0);
+
+        System.out.println("Số ngày giữa hai ngày: " + Math.abs(days1 - days2));
 
         scanner.close();
     }
