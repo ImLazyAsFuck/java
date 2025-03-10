@@ -101,6 +101,26 @@ public class Practice02 {
                     }
                     System.out.println();
                     break;
+                case 7:
+                    int size = Math.min(n, m);
+                    int[] diagonal = new int[size];
+                    for (int i = 0; i < size; i++) {
+                        diagonal[i] = arr[i][i];
+                    }
+                    for (int i = 1; i < size; i++) {
+                        int key = diagonal[i];
+                        int j = i - 1;
+                        while (j >= 0 && diagonal[j] < key) {
+                            diagonal[j + 1] = diagonal[j];
+                            j--;
+                        }
+                        diagonal[j + 1] = key;
+                    }
+                    for (int i = 0; i < size; i++) {
+                        arr[i][i] = diagonal[i];
+                    }
+                    System.out.println("Đã sắp xếp đường chéo chính giảm dần!");
+                    break;
                 case 8:
                     System.out.println("Nhập giá trị của mảng 1D:");
                     int[] newRow = new int[m];
