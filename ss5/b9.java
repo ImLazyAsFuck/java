@@ -5,7 +5,7 @@ public class b9  {
         Scanner sc = new Scanner(System.in);
         System.out.print("Mời nhập n: ");
         int n = sc.nextInt();
-        if(n < 0){
+        if(n <= 0){
             System.out.println("Ma trận không hợp lệ.");
             return;
         }
