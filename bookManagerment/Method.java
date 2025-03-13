@@ -31,14 +31,20 @@ public class Method{
     }
 
     public static void insertBooks(Scanner input, int currentIndex, Book[] books){
-        int amountBoook = Integer.parseInt(input.nextLine());
-        if(amountBoook <= 0){
+        int amountBook = Integer.parseInt(input.nextLine());
+        if(amountBook <= 0){
             System.out.println("Số lượng sách không hợp lệ");
             return;
         }
-        for(int i = currentIndex; i < currentIndex + amountBoook; i++){
+        if(amountBook + currentIndex > books.length){
+            System.out.println("Số lượng sách vượt quá giới hạn");
+            return;
+        }
+        for(int i = currentIndex; i < currentIndex + amountBook; i++){
+            books[i] = new Book();
             books[i].inputData(input);
         }
+        currentIndex += amountBook;
     }
 
     public static void calculateAndDisplayProfit(int currentIndex, Book[] books){
