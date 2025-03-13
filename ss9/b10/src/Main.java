@@ -46,6 +46,7 @@ public class Main {
                             students[i] = students[i + 1];
                         }
                     }
+                    currentIndex--;
                     break;
                 default:
                     System.out.println("Vui lòng nhập từ 1 đến 5");
