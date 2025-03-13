@@ -97,6 +97,7 @@ public class Book{
                 this.setBookId(newBookId);
                 break;
             }
+            System.out.println("Mã không hợp lệ. Vui lòng nhập mã bắt đầu bằng B và dài 5 ký tự");
         }while(true);
 
         do{
