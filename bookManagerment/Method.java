@@ -31,6 +31,7 @@ public class Method{
     }
 
     public static void insertBooks(Scanner input, int currentIndex, Book[] books){
+        System.out.printf("Số lượng sách thêm: ");
         int amountBook = Integer.parseInt(input.nextLine());
         if(amountBook <= 0){
             System.out.println("Số lượng sách không hợp lệ");
