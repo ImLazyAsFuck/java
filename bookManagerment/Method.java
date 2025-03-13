@@ -25,27 +25,27 @@ public class Method{
             return;
         }
         for(int i = 0; i < currentIndex; i++){
-            System.out.printf("Sách thứ %d", i + 1);
+            System.out.printf("Sách thứ %d\n", i + 1);
             books[i].displayData();
         }
     }
 
-    public static void insertBooks(Scanner input, int currentIndex, Book[] books){
+    public static int insertBooks(Scanner input, int currentIndex, Book[] books){
         System.out.printf("Số lượng sách thêm: ");
         int amountBook = Integer.parseInt(input.nextLine());
         if(amountBook <= 0){
             System.out.println("Số lượng sách không hợp lệ");
-            return;
+            return currentIndex;
         }
         if(amountBook + currentIndex > books.length){
             System.out.println("Số lượng sách vượt quá giới hạn");
-            return;
+            return currentIndex;
         }
         for(int i = currentIndex; i < currentIndex + amountBook; i++){
             books[i] = new Book();
             books[i].inputData(input);
         }
-        currentIndex += amountBook;
+        return currentIndex += amountBook;
     }
 
     public static void calculateAndDisplayProfit(int currentIndex, Book[] books){

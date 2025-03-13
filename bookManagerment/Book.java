@@ -91,6 +91,15 @@ public class Book{
     public void inputData(Scanner input){
 
         do{
+            System.out.printf("ID: ");
+            String newBookId = input.nextLine();
+            if(newBookId.matches("^B\\d{4}$")){
+                this.setBookId(newBookId);
+                break;
+            }
+        }while(true);
+
+        do{
             System.out.printf("Tên sách: ");
             String newBookName = input.nextLine();
             if(newBookName.length() < 6){
@@ -169,7 +178,7 @@ public class Book{
         System.out.printf("ID: %s\n", this.getBookId());
         System.out.printf("Tên sách: %s\n", this,getBookName());
         System.out.printf("Giá nhập: %.2f\n", this,getImportPrice());
-        System.out.printf("Giá xuất: %s\n", this,getExportPrice());
+        System.out.printf("Giá xuất: %.2f\n", this,getExportPrice());
         System.out.printf("Tiêu đề: %s\n", this,getTitle());
         System.out.printf("Tên tác giả: %s\n", this,getAuthor());
         System.out.printf("Lợi nhuận: %d\n", this,getInterest());

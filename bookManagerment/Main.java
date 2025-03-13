@@ -15,7 +15,7 @@ public class Main {
                     Method.displayBook(currentIndex, books);
                     break;
                 case 2:
-                    Method.insertBooks(input, currentIndex, books);
+                    currentIndex = Method.insertBooks(input, currentIndex, books);
                     break;
                 case 3:
                     Method.calculateAndDisplayProfit(currentIndex, books);
