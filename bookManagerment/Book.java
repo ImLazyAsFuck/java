@@ -177,13 +177,13 @@ public class Book{
 
     public void displayData(){
         System.out.printf("ID: %s\n", this.getBookId());
-        System.out.printf("Tên sách: %s\n", this,getBookName());
-        System.out.printf("Giá nhập: %.2f\n", this,getImportPrice());
-        System.out.printf("Giá xuất: %.2f\n", this,getExportPrice());
+        System.out.printf("Tên sách: %s\n", this.getBookName());
+        System.out.printf("Giá nhập: %.2f\n", this.getImportPrice());
+        System.out.printf("Giá xuất: %.2f\n", this.getExportPrice());
         System.out.printf("Tiêu đề: %s\n", this,getTitle());
-        System.out.printf("Tên tác giả: %s\n", this,getAuthor());
-        System.out.printf("Lợi nhuận: %d\n", this,getInterest());
-        System.out.printf("Năm: %d\n", this,getYear());
+        System.out.printf("Tên tác giả: %s\n", this.getAuthor());
+        System.out.printf("Lợi nhuận: %.2f\n", this.getInterest());
+        System.out.printf("Năm: %d\n", this.getYear());
     }
 
     public double callInterest(){
