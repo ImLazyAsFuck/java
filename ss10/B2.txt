@@ -1,0 +1,47 @@
+1. Kế thừa là gì? Nó giúp ích gì trong lập trình hướng đối tượng?
+Kế thừa (Inheritance) là một cơ chế trong lập trình hướng đối tượng (OOP) cho phép một lớp (class) mới tái sử dụng các thuộc tính và phương thức của một lớp đã có. Lớp con (subclass) kế thừa từ lớp cha (superclass) và có thể mở rộng hoặc thay đổi chức năng của nó.
+
+Lợi ích của kế thừa trong OOP:
+
+Tái sử dụng mã nguồn (Code Reusability): Giúp giảm trùng lặp mã bằng cách tái sử dụng các phương thức và thuộc tính của lớp cha.
+Dễ mở rộng (Extensibility): Lớp con có thể mở rộng chức năng của lớp cha mà không cần chỉnh sửa trực tiếp vào lớp cha.
+Dễ bảo trì (Maintainability): Khi có thay đổi trong lớp cha, các lớp con cũng có thể tự động cập nhật theo.
+Tăng tính tổ chức của mã nguồn: Giúp phân loại các lớp theo quan hệ cha-con hợp lý hơn.
+
+2. Sự khác biệt giữa kế thừa (Inheritance) và đóng gói (Encapsulation) trong Java
+Tiêu chí	    | Kế thừa (Inheritance)	Đóng gói (Encapsulation)
+Khái niệm	    | Cho phép lớp con kế thừa thuộc tính và phương thức từ lớp cha.	| Bảo vệ dữ liệu bằng cách ẩn thông tin và kiểm soát quyền truy cập.
+Mục đích	    | Tái sử dụng mã nguồn và tổ chức các lớp theo quan hệ cha-con.	    | Đảm bảo dữ liệu không bị truy cập trái phép và duy trì tính toàn vẹn.
+Cách áp dụng	| Dùng từ khóa extends để tạo lớp con.	                            | Sử dụng private để ẩn dữ liệu, dùng getter và setter để truy xuất dữ liệu.
+Lợi ích chính	| Giúp giảm trùng lặp mã và dễ mở rộng chương trình.	            | Kiểm soát dữ liệu và tăng tính bảo mật.
+
+3. Ví dụ về kế thừa trong Java
+
+class Animal {
+    String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public void makeSound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+
+    public void makeSound() {
+        System.out.println(name + " barks: Woof! Woof!");
+    }
+}
+
+public class TestCar {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Buddy");
+        dog.makeSound();
+    }
+}

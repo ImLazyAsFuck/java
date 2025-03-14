@@ -1,0 +1,70 @@
+1. Tính đóng gói là gì? Tại sao tính đóng gói lại quan trọng trong lập trình đối tượng?
+Tính đóng gói (Encapsulation) là một trong bốn nguyên tắc quan trọng của lập trình hướng đối tượng (OOP). Nó là cơ chế giấu thông tin (data hiding), giúp bảo vệ dữ liệu của một đối tượng khỏi bị truy cập hoặc thay đổi trực tiếp từ bên ngoài.
+
+Tại sao tính đóng gói quan trọng?
+
+Bảo vệ dữ liệu: Ngăn chặn việc thay đổi dữ liệu một cách không kiểm soát.
+Kiểm soát truy cập: Chỉ cho phép các phương thức được xác định truy cập hoặc thay đổi dữ liệu.
+Dễ dàng bảo trì: Giúp quản lý mã nguồn tốt hơn, tránh sửa đổi trực tiếp vào dữ liệu.
+Tăng tính bảo mật: Giảm nguy cơ lỗi do dữ liệu bị thay đổi ngoài ý muốn.
+
+2. Làm thế nào để áp dụng tính đóng gói trong Java?
+
+Khai báo các thuộc tính của lớp là private (để ngăn chặn truy cập trực tiếp từ bên ngoài).
+Cung cấp các phương thức getter và setter (với phạm vi public) để truy xuất và thay đổi giá trị của thuộc tính.
+Getter và Setter là gì?
+
+Getter: Phương thức để lấy giá trị của thuộc tính.
+Setter: Phương thức để gán giá trị mới cho thuộc tính, có thể kèm theo logic kiểm tra dữ liệu hợp lệ.
+
+3. Ví dụ về tính đóng gói trong Java
+
+public class Person {
+    private String name; 
+    private int age;    
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age > 0) { 
+            this.age = age;
+        } else {
+            System.out.println("Tuổi không hợp lệ!");
+        }
+    }
+
+
+    public void display() {
+        System.out.println("Tên: " + name + ", Tuổi: " + age);
+    }
+}
+
+
+public class TestCar {
+    public static void main(String[] args) {
+        Person person = new Person("An", 25);
+
+        person.display();
+
+        person.setAge(30);
+        System.out.println("Tuổi sau khi cập nhật: " + person.getAge());
+
+        person.setAge(-5);
+    }
+}
+
