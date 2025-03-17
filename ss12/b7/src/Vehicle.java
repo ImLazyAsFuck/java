@@ -1,13 +1,11 @@
 public class Vehicle{
-
     public Vehicle(){
     }
 
-    public void move(){
-        System.out.println("Di chuyển bình thường");
+    public void move() {
+        System.out.println("Vehicle moving");
     }
-
-    public void sound(){
-        System.out.println("Make sound");
+    public void sound() {
+        System.out.println("Vehicle sound");
     }
 }

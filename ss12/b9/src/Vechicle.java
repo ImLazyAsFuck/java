@@ -1,0 +1,8 @@
+public abstract class Vechicle{
+    public abstract void move();
+    public abstract void sound();
+
+    public void move(int time, int speed) {
+        System.out.println("Vehicle traveled " + (time * speed) + " km.");
+    }
+}
