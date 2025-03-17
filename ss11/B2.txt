@@ -1,0 +1,14 @@
+Tính trừu tượng trong lập trình hướng đối tượng là một kỹ thuật giúp che giấu các chi tiết cài đặt phức tạp và chỉ hiển thị những thông tin cần thiết cho người dùng. Điều này giúp lập trình viên tập trung vào cách sử dụng đối tượng thay vì quan tâm đến cách nó được triển khai. Trong Java, tính trừu tượng có thể được thực hiện thông qua lớp trừu tượng (abstract class) và giao diện (interface).
+
+Phần phân tích:
+Tại sao cần tính trừu tượng trong phần mềm phức tạp?
+
+Trong các hệ thống phần mềm lớn, nếu không có tính trừu tượng, mã nguồn sẽ trở nên rối rắm và khó bảo trì.
+Nó giúp giảm sự phụ thuộc giữa các thành phần trong hệ thống, từ đó dễ dàng nâng cấp và mở rộng.
+Người dùng hoặc lập trình viên có thể sử dụng các chức năng mà không cần quan tâm đến cách chúng hoạt động bên trong.
+Sự khác biệt giữa lớp trừu tượng và giao diện trong Java là gì?
+
+Lớp trừu tượng (abstract class): Có thể chứa cả phương thức có triển khai và phương thức trừu tượng (chưa có nội dung). Một lớp con chỉ có thể kế thừa một lớp trừu tượng do Java không hỗ trợ đa kế thừa lớp.
+Giao diện (interface): Chỉ chứa các phương thức trừu tượng (trước Java 8), và các lớp có thể triển khai nhiều giao diện cùng lúc, giúp linh hoạt hơn trong thiết kế phần mềm.
+Liên hệ thực tế:
+Ví dụ về tính trừu tượng trong đời sống là máy ATM. Khi rút tiền từ máy ATM, người dùng chỉ cần nhập mã PIN và số tiền cần rút mà không cần biết bên trong hệ thống ngân hàng xử lý giao dịch như thế nào. Tương tự, khi điều khiển TV bằng remote, người dùng chỉ cần nhấn nút mà không cần hiểu cơ chế hoạt động bên trong TV. Đây chính là nguyên tắc của tính trừu tượng—che giấu chi tiết phức tạp và chỉ cung cấp chức năng cần thiết.

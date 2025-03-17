@@ -1,0 +1,18 @@
+public class Lion extends Animal {
+    public Lion(String name, int age) {
+        super(name, age);
+    }
+
+    public Lion(){
+    }
+
+    @Override
+    public void sound() {
+        System.out.println("Roar!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("The lion is running.");
+    }
+}
