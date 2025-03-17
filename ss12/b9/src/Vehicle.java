@@ -1,4 +1,4 @@
-public abstract class Vechicle{
+public abstract class Vehicle{
     public abstract void move();
     public abstract void sound();
 

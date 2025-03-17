@@ -1,4 +1,4 @@
-public class Airplane extends Vechicle{
+public class Airplane extends Vehicle{
     private int altitude;
 
     public Airplane(int altitude) {
