@@ -24,5 +24,5 @@ public class Main{
         airplane.move(5, 800);
         System.out.println("Airplane is flying at altitude: " + ((Airplane) airplane).getAltitude() + " feet.");
     }
-    
+
 }
